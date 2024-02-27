@@ -1,3 +1,4 @@
+
 const mealCategory = document.querySelector('.category');
 
 const catergoryApiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
@@ -26,7 +27,7 @@ async function fetchDisplayCategoryData() {
 fetchDisplayCategoryData()
 
 const input = document.querySelector('.input')
-const mealList = document.querySelector('.mealList')
+const searchResult = document.querySelector('.searchResult')
 
 
 const fetchMeals = async (searchInput) => {
@@ -39,7 +40,7 @@ const displayMeals = async () => {
   const searchInput = input.value
   const meals = await fetchMeals(searchInput)
 
-  mealList.innerHTML = ''
+  searchResult.innerHTML = ''
 
   if (meals) {
     meals.forEach(meal => {
@@ -47,12 +48,12 @@ const displayMeals = async () => {
 
       item.innerHTML = `<a href='/recipe.html?idMeal=${meal.idMeal}'>${meal.strMeal}</a>`
 
-      mealList.appendChild(item)
+      searchResult.appendChild(item)
     })
   } else {
     const noResultsItem = document.createElement('li')
     noResultsItem.textContent = 'No meals found.'
-    mealList.appendChild(noResultsItem)
+    searchResult.appendChild(noResultsItem)
   }
 }
 

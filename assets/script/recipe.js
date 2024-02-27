@@ -10,9 +10,6 @@ const mealInstructions = document.querySelector('.instructions')
 
 const idMeal = searchParams.get('idMeal')
 
-
-
-
 if (idMeal) {
   // fetch for meal with that id.
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)

@@ -9,9 +9,6 @@
 body {
   font-family: "Merienda", cursive;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 a {
@@ -28,17 +25,28 @@ button {
   height: fit-content;
 }
 
-.landing {
-  background: linear-gradient(0deg, #0e0303, #0f0b0d4d), url(images/bg.jpg);
+main {
+  background: linear-gradient(0deg, #0e0303, #0f0b0d4d), url(/assets/images/bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8rem;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   h1 {
     text-align: center;
     color: #fff;
     font-size: 2rem;
-    text-wrap: nowrap;
     font-weight: 900;
   }
 
@@ -57,38 +65,45 @@ p {
   text-align: center;
 }
 
-.searchbar {
+.search-recipe {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+}
+
+.searchbar {
+  position: relative;
   padding: 2rem;
 }
 
 .search {
   background-color: #efefef;
-  width: 30%;
+  width: 80vw;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
-  padding: 0 5px;
+  padding: 10px;
   cursor: pointer;
 
   &:focus {
-    color: #748cf1;
-    outline: 2px solid #748cf1;
+    color: #c3872c;
+    outline: 2px solid #dd6f47;
   }
 
   input {
     position: relative;
-    width: 100%;
-    padding: 15px 35px 15px 15px;
+    width: 80vw;
+    max-width: 100%;
+    padding: 10px;
     background-color: #efefef;
     border: 0;
     outline: 2px solid transparent;
     border-radius: 20px;
     transition: all 0.4s ease-in-out;
     font-size: 1rem;
+    cursor: pointer;
   }
 
   button {
@@ -103,13 +118,22 @@ p {
   }
 }
 
-.category {
-  background-color: #0e0303;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+.searchResult {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 25%;
+  max-height: 200px; /* Set a maximum height */
+  overflow-y: auto; /* Add vertical scroll if content exceeds height */
+  color: #fff;
+  background-color: transparent;
+
+  li {
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+    text-align: center;
+    padding: 10px;
+  }
 }
 
 .text {
@@ -119,6 +143,7 @@ p {
   margin: 0 auto;
 }
 
+/* footer section */
 .mealCategory {
   background-position: center;
   background-repeat: no-repeat;
@@ -126,3 +151,36 @@ p {
   height: 10vh;
   width: 100%;
 }
+
+.category {
+  background-color: #0e0303;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  main {
+    gap: 4rem; 
+  }
+
+  .landing {
+    h1 {
+      font-size: 1.5rem; /
+    }
+  }
+
+  .searchbar {
+    padding: 1rem; 
+  }
+
+  .search {
+    input {
+      font-size: 0.9rem; 
+    }
+  }
+}
+

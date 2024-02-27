@@ -3,44 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="assets/style/style.css" />
     <title>js-meal-recipe-finder</title>
   </head>
   <body>
-    <section class="landing">
-      <section class="search-recipe">
-        <div class="searchbar">
-          <p>what would you like to eat today&quest;</p>
-          <form class="search">
-            <button>
-              <span class="material-symbols-outlined"> search </span>
-            </button>
+    <main>
+     <div class="landing">
+      <header class="search-recipe">
+        <h1>What would you like to eat today?</h1>
+       
+          <div class="searchbar">
+            <form class="search">
+              <button>
+                <span class="material-symbols-outlined">Search</span>
+              </button>
+              <input
+                type="text"
+                placeholder="Search recipe by category or name"
+                class="input"
+              />
+              <button class="filter">
+                <span class="material-symbols-outlined">Tune</span>
+              </button>
+            </form>
+            
+            <ul class="searchResult"></ul>
+          </div>
+      </header>
 
-            <input
-              type="text"
-              placeholder="search recipe by category or name"
-              class="input"
-            />
+      <div class="text">
+        <h1>Enjoy delicious meals right now</h1>
+        <h3 class="startbtn">Click, search & start cooking</h3>
+      </div>
+     </div>
 
-            <button class="filter">
-              <span class="material-symbols-outlined"> tune </span>
-            </button>
-          </form>
-          <ul class="mealList"></ul>
+      <footer>
+        <div class="category"></div>
+
+        <div class="add">
+          <button></button>
         </div>
-
-        <div class="text">
-          <h1>Enjoy delicious meals right now</h1>
-          <h3 class="startbtn">click, search &amp; start cooking</h3>
-        </div>
-      </section>
-    </section>
-
-    <div class="category"></div>
-
-    <div class="add">
-      <button></button>
-    </div>
+      </footer>
+    </main>
 
     <script type="module" src="assets/script/index.js"></script>
   </body>
