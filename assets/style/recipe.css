@@ -1,0 +1,36 @@
+@import "/assets/style.css";
+
+body{
+  background-color: antiquewhite;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0e0303;
+}
+
+.naming{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fda623;
+}
+
+.strMealThumb{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.ingredients-Measurement{
+  display: flex;
+}
+
+.instructionsAndIngrediends{
+  display: flex;
+}
