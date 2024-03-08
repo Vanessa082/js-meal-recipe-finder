@@ -11,25 +11,36 @@
     <title>js-meal-recipe-finder</title>
   </head>
   <body>
+    <header>
+      <h1>Yummy</h1>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Favorites</li>
+          <li>Contact Us</li>
+          <li>Categories</li>
+          <li>Latest Reipe</li>
+        </ul>
+        <form class="search">
+          <button class="btn">
+            <span class="material-symbols-outlined">Search</span>
+          </button>
+          <input
+            type="text"
+            placeholder="Search recipe by category or name"
+            class="input"
+          />
+        </form>
+      </nav>
+    </header>
+
     <main>
       <div class="landing">
         <header class="search-recipe">
           <h1>What would you like to eat today?</h1>
 
           <div class="searchbar">
-            <form class="search">
-              <button>
-                <span class="material-symbols-outlined">Search</span>
-              </button>
-              <input
-                type="text"
-                placeholder="Search recipe by category or name"
-                class="input"
-              />
-              <button class="filter">
-                <span class="material-symbols-outlined">Tune</span>
-              </button>
-            </form>
+          
 
             <ul class="searchResult"></ul>
           </div>
