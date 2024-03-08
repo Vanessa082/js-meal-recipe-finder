@@ -207,11 +207,12 @@ ul{
       }
 
       .rating i{
-        color: gold;
+        color: #ffd700;
       }
       
       figcaption{
-        font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.5rem;
         font-weight: 400;
       }
       &:hover{
@@ -221,6 +222,17 @@ ul{
     }
   }
 
+}
+
+.mealArea{
+  position: relative;
+}
+
+.favorites .mealArea i{
+  color: #ff0000;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 
