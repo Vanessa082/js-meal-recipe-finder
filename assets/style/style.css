@@ -231,10 +231,71 @@ ul{
 .favorites .mealArea i{
   color: #ff0000;
   position: absolute;
-  right: 0;
   top: 0;
+  /* right: 0; */
 }
 
+/* contact us section */
+
+.contactUs{
+  background-color: #ffd8ca;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+
+  h1{
+    font-family: 'Playfair Display', serif ;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  p{
+    font-family: 'Playfair Display', serif ;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  form{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 60%;
+    margin: 0 auto;
+
+    input{
+      font-size: 1rem;
+      padding: 1rem;
+      width: 90%;
+      border: 0;
+      cursor: pointer;
+
+      &:focus{
+        outline: none;
+      }
+    }
+
+    button{
+      background-color: #ff642f;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 400;
+      padding: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  small{
+    text-align: center;
+    padding: 1rem;
+
+    &:hover{
+      color: #ff642f;
+    }
+  }
+}
 
 /* main {
   justify-content: space-between;
