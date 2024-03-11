@@ -1,6 +1,7 @@
 const searchBar = document.querySelector('.search')
 const searchInput = document.querySelector('.input')
 const searchBtn = document.querySelector('.btn')
+const categoryCarousel = document.querySelector('.carouselContainer')
 
 searchBtn.addEventListener('click', () => {
   searchBar.classList.toggle('active')
@@ -9,12 +10,45 @@ searchBtn.addEventListener('click', () => {
 
 // catergory section
 
- document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-  .then((response) => response.json())
-  .then((data) => displayCateries(data.categories))
-  .catch((error) => console.error('Error fetching data:', error))
- })
+    .then((response) => response.json())
+    .then((data) => {
+      const categories = data.categories
+      displayCategories(categories)
+
+      console.log(categories)
+    })
+    .catch((error) => console.error('Error fetching data:', error))
+})
+
+const displayCategories = (categories) => {
+  categories.forEach((category, indx) => {
+    if (indx % 7 === 0) {
+      const carouselItem = document.createElement('div')
+      carouselItem.classList.add('carousel-item')
+
+      if (indx === 0) {
+        carouselItem.classList.add('active')
+      }
+
+      const categoryThumb = category.strCategoryThumb
+      const categoryStr = category.strCategory
+
+      const img = document.createElement('img')
+      img.src = categoryThumb
+      img.alt = categoryStr
+
+      const str = document.createElement('div')
+      str.classList.add('str')
+      str.innerHTML = `<h3>${categoryStr}</h3>`
+
+      carouselItem.appendChild(img);
+      carouselItem.appendChild(str);
+      categoryCarousel.appendChild(carouselItem);
+    }
+  })
+}
 
 
 // const searchParams = new URLSearchParams(window.location.search)

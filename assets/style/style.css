@@ -297,6 +297,12 @@ ul{
   }
 }
 
+/* carouselContainerstyle */
+.carouselContainer{
+  display: flex;
+  
+}
+
 /* main {
   justify-content: space-between;
   height: 100%;
