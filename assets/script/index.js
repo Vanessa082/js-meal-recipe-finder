@@ -7,6 +7,15 @@ searchBtn.addEventListener('click', () => {
   searchInput.focus()
 })
 
+// catergory section
+
+ document.addEventListener('DOMContentLoaded', ()=>{
+  fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+  .then((response) => response.json())
+  .then((data) => displayCateries(data.categories))
+  .catch((error) => console.error('Error fetching data:', error))
+ })
+
 
 // const searchParams = new URLSearchParams(window.location.search)
 // const ingredientsMeasurement = document.querySelector('.ingredients-Measurement')
