@@ -17,38 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
       const categories = data.categories
       displayCategories(categories)
 
+      setInterval(() => {
+
+      }, 5000)
+
       console.log(categories)
     })
     .catch((error) => console.error('Error fetching data:', error))
 })
 
 const displayCategories = (categories) => {
-  categories.forEach((category, indx) => {
-    if (indx % 7 === 0) {
-      const carouselItem = document.createElement('div')
-      carouselItem.classList.add('carousel-item')
 
-      if (indx === 0) {
-        carouselItem.classList.add('active')
-      }
+  for (let i = 0; i < categories.length; i++) {
+    const carouselItem = document.createElement('div')
+    carouselItem.classList.add('carouselItem')
 
-      const categoryThumb = category.strCategoryThumb
-      const categoryStr = category.strCategory
-
-      const img = document.createElement('img')
-      img.src = categoryThumb
-      img.alt = categoryStr
-
-      const str = document.createElement('div')
-      str.classList.add('str')
-      str.innerHTML = `<h3>${categoryStr}</h3>`
-
-      carouselItem.appendChild(img);
-      carouselItem.appendChild(str);
-      categoryCarousel.appendChild(carouselItem);
+    if (i === 0) {
+      carouselItem.classList.add('active')
     }
-  })
+    const category = categories[i]
+    const categoryThumb = category.strCategoryThumb
+    const categoryStr = category.strCategory
+
+    const img = document.createElement('img')
+    img.src = categoryThumb
+    img.alt = categoryStr
+
+    const categoryName = document.createElement('h3')
+    categoryName.classList.add('categoryName')
+    categoryName.innerHTML = categoryStr
+
+    carouselItem.appendChild(img)
+    carouselItem.appendChild(categoryName)
+    categoryCarousel.appendChild(carouselItem)
+  }
+
 }
+
 
 
 // const searchParams = new URLSearchParams(window.location.search)
