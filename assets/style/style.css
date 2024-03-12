@@ -117,8 +117,23 @@ ul{
 }
 
 .searchResult{
+  display: flex;
+  flex-direction: column;
   width: 40vw;
   background-color: #c3872c;
+  width: 25%;
+  max-height: 200px; /* Set a maximum height */
+  overflow-y: auto; /*Add vertical scroll if content exceeds height */
+  color: #fff;
+  background-color: transparent;
+
+  li {
+    color: #5e5e5e;
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+    text-align: center;
+    padding: 10px;
+  }
 }
 
 /* end of nav styling */
@@ -389,21 +404,9 @@ ul{
 }
 
 .searchResult {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 25%;
-  max-height: 200px; /* Set a maximum height */
-  /* overflow-y: auto; Add vertical scroll if content exceeds height */
-  /* color: #fff;
-  background-color: transparent;
+  
 
-  li {
-    font-size: 0.8rem;
-    text-wrap: nowrap;
-    text-align: center;
-    padding: 10px;
-  }
+
 } */
 
 /* .text {

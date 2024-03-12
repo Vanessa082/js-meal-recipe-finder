@@ -1,15 +1,16 @@
 const searchBar = document.querySelector('.search')
-const searchParams = new URLSearchParams(window.location.search)
-const searchInput = document.querySelector('.input')
+const input = document.querySelector('.input')
 const searchResult = document.querySelector('.searchResult')
 const searchBtn = document.querySelector('.btn')
 const categoryCarousel = document.querySelector('.carouselContainer')
+const latestRecipe = document.querySelector('.latestRecipe')
 
 searchBtn.addEventListener('click', () => {
   searchBar.classList.toggle('active')
-  searchInput.focus()
+  input.focus()
 })
 
+const searchParams = new URLSearchParams(window.location.search)
 const fetchMeals = async (searchInput) => {
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
   const data = await response.json();
@@ -98,7 +99,7 @@ const displayMeals = async () => {
     sourceButton.href = mealSourceLink
   
   }
-  console.log('id to fetch', idMeal) 
+ 
   
 
 // catergory section
@@ -147,6 +148,20 @@ const displayCategories = (categories) => {
 
 }
 
+
+async function latestRecipeMeal (){
+  try{
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+
+    if(!response.ok){
+      throw new Error(`Error fecthing data:${response.status} `)
+    }
+
+    const data = await response.json()
+  }catch(error){
+    console.error(error)
+  }
+}
 
 
 // const searchParams = new URLSearchParams(window.location.search)
