@@ -68,3 +68,57 @@ const displayMealDetails = (meal) => {
 
 }
 console.log('id to fetch', idMeal) 
+
+
+
+// backup
+
+
+// JavaScript
+const db = [
+  // Your meal database (retrieved from the Meal DB API)
+  // Each meal should have properties like name, picture, ingredients, and instructions
+  // Example: { name: 'Spaghetti Carbonara', picture: '...', ingredients: [...], instructions: '...' }
+];
+
+function displaySearchResults(results) {
+  const searchResults = document.getElementById('searchResults');
+  searchResults.innerHTML = ''; // Clear previous results
+
+  results.forEach((meal) => {
+      const li = document.createElement('li');
+      li.textContent = meal.name;
+      li.addEventListener('click', () => showMealDetails(meal));
+      searchResults.appendChild(li);
+  });
+}
+
+function showMealDetails(meal) {
+  const mealDetails = document.getElementById('mealDetails');
+  mealDetails.style.display = 'block';
+  mealDetails.innerHTML = `
+      <h2>${meal.name}</h2>
+      <img src="${meal.picture}" alt="${meal.name}">
+      <h3>Ingredients:</h3>
+      <ul>
+          ${meal.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join('')}
+      </ul>
+      <h3>Instructions:</h3>
+      <p>${meal.instructions}</p>
+  `;
+}
+
+function doSearch() {
+  const searchField = document.getElementById('searchField').value;
+  const results = db.filter((meal) =>
+      meal.name.toLowerCase().includes(searchField.toLowerCase())
+  );
+  displaySearchResults(results);
+}
+
+function search() {
+  const searchButton = document.getElementById('searchButton');
+  searchButton.addEventListener('click', doSearch);
+}
+
+window.addEventListener('load', search);

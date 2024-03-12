@@ -318,6 +318,16 @@ ul{
   }
 }
 
+.latestRecipe{
+  background-color: #c3872c;
+
+  .latestRecipeGrid{
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+  }
+}
+
 /* carouselContainerstyle */
 
 
@@ -455,5 +465,5 @@ ul{
       font-size: 0.9rem; 
     }
   }
-} */ */
+} */ 
 

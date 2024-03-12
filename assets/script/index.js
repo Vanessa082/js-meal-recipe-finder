@@ -3,7 +3,7 @@ const input = document.querySelector('.input')
 const searchResult = document.querySelector('.searchResult')
 const searchBtn = document.querySelector('.btn')
 const categoryCarousel = document.querySelector('.carouselContainer')
-const latestRecipe = document.querySelector('.latestRecipe')
+const latestRecipe = document.querySelector('.latestRecipeGrid')
 
 searchBtn.addEventListener('click', () => {
   searchBar.classList.toggle('active')
@@ -149,7 +149,7 @@ const displayCategories = (categories) => {
 }
 
 
-async function latestRecipeMeal (){
+async function latestRecipeIngredients (){
   try{
     const response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
 
@@ -158,10 +158,31 @@ async function latestRecipeMeal (){
     }
 
     const data = await response.json()
+    const latestIngredients = data.meals
+
+    console.log(latestIngredients)
+
+    for(let i = 0; i < 20; i++){
+      const ingredientDiv = document.createElement('div')
+      ingredientDiv.classList.add('ingredient')
+
+      const ingredientName = document.createElement('h3')
+      ingredientName.textContent = latestIngredients[i].strIngredient
+      
+      const ingredientDescription = document.createElement('div')
+      ingredientDescription.textContent = latestIngredients[i].strDescription
+      
+      ingredientDiv.appendChild(ingredientName)
+      ingredientDiv.appendChild(ingredientDescription) 
+      latestRecipe.appendChild(ingredientDiv)
+    }
+    
   }catch(error){
     console.error(error)
   }
 }
+
+window.onload = latestRecipeIngredients
 
 
 // const searchParams = new URLSearchParams(window.location.search)
