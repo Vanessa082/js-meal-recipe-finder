@@ -71,7 +71,7 @@ console.log('id to fetch', idMeal)
 
 
 
-// backup
+// backu
 
 
 // JavaScript
@@ -122,3 +122,60 @@ function search() {
 }
 
 window.addEventListener('load', search);
+
+
+
+
+const displayMealDetails = async (mealId) => {
+  const detailedMeal = await fetchMealDetail(mealId)
+
+  // const mealThumbnail = meal.strMealThumb
+  // mealImage.src = mealThumbnail;
+  // mealImage.alt = meal.strMeal;
+
+  mealName.innerHTML = detailedMeal.strMeal
+  // mealCategory.innerHTML = meal.strCategory
+  // mealArea.innerHTML = meal.strArea
+
+  // const listOfIngredients = document.querySelector('.listOfIngredients')
+  // const listOfMeasurements = document.querySelector('.listOfMeasurements')
+
+  // for (let i = 1; i <= 20; i++) {
+  //   const ingredient = meal[`strIngredient${i}`]
+  //   const measurement = meal[`strMeasure${i}`]
+
+  //   if (ingredient) {
+  //     const ingredientItem = document.createElement('li')
+  //     ingredientItem.textContent = ingredient
+  //     listOfIngredients.appendChild(ingredientItem)
+  //   }
+
+  //   if (measurement) {
+  //     const measurementItem = document.createElement('li')
+  //     measurementItem.textContent = measurement
+  //     listOfMeasurements.appendChild(measurementItem)
+  //   }
+  // }
+
+
+  // const instructionsList = document.createElement('ol')
+  // const instructionsSteps = meal.strInstructions.split('\r\n\r\n')
+
+  // instructionsSteps.forEach(step => {
+  //   const listIterm = document.createElement('li')
+  //   listIterm.textContent = step
+  //   instructionsList.appendChild(listIterm)
+  // })
+
+  // mealInstructions.appendChild(instructionsList)
+
+
+  // const mealYutubeLink = meal.strYoutube
+  // const mealSourceLink = meal.strSource
+
+  // youtubeButton.href = mealYutubeLink
+  // sourceButton.href = mealSourceLink
+
+  // mealDetails.style.display = 'block'
+
+}
