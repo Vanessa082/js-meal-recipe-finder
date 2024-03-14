@@ -12,40 +12,41 @@ searchBtn.addEventListener('click', () => {
   input.focus()
 })
 
+
 const fetchMealDetail = async (searchInput) => {
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
-
+  
   console.log('Response status:', response.status)
-
+  
   const data = await response.json()
   
   console.log('API Response:', data)
-
+  
   return data.meals;
 }
 
 const displayMeals = async () => {
-    const searchInput = input.value
-    const meals = await fetchMealDetail(searchInput)
+  const searchInput = input.value
+  const meals = await fetchMealDetail(searchInput)
   
-    searchResult.innerHTML = ''
+  searchResult.innerHTML = ''
   
-    if (meals) {
-      meals.forEach(meal => {
-        const item = document.createElement('li')
-  
-        item.innerHTML = `<a href='#'dataMealId='${meal.idMeal}'>${meal.strMeal}</a>`
-  
-        searchResult.appendChild(item)
-      })
-    } else {
-      const noResultsItem = document.createElement('li')
-      noResultsItem.textContent = 'No meals found.'
-      searchResult.appendChild(noResultsItem)
-    }
+  if (meals) {
+    meals.forEach(meal => {
+      const item = document.createElement('li')
+      
+      item.innerHTML = `<a href='#'dataMealId='${meal.idMeal}'>${meal.strMeal}</a>`
+      
+      searchResult.appendChild(item)
+    })
+  } else {
+    const noResultsItem = document.createElement('li')
+    noResultsItem.textContent = 'No meals found.'
+    searchResult.appendChild(noResultsItem)
   }
-  
-  input.addEventListener('input', displayMeals)
+}
+
+input.addEventListener('input', displayMeals)
 
   searchResult.addEventListener('click', (event)=>{
     if(event.target.tagName === 'A'){
@@ -61,10 +62,36 @@ const displayMeals = async () => {
     
 
     console.log('API Response:', data)
+    const mealName = document.querySelector('.strMeal')
+    const mealCategory = document.querySelector('.strCategory')
+    const mealArea = document.querySelector('.strArea')
 
-    mealName.innerHTML = data.meals.strMeal
-    mealOrigin.appendChild(mealName)
-   
+    mealName.textContent = data.meals[0].strMeal
+    mealCategory.textContent = data.meals[0].strCategory
+    mealArea.textContent = data.meals[0].strArea
+    displayIngredientsMeasurements(data) 
+  }
+
+  const displayIngredientsMeasurements = (data) => {
+    const listOfIngredients = document.querySelector('.listOfIngredients');
+    const listOfMeasurements = document.querySelector('.listOfMeasurements');
+  
+    listOfIngredients.innerHTML = '';
+    listOfMeasurements.innerHTML = '';
+  
+    for (let i = 1; i <= 20; i++) {
+      if (data.meals[0][`strIngredient${i}`]) {
+        const ingredient = document.createElement('li');
+        ingredient.textContent = data.meals[0][`strIngredient${i}`];
+        listOfIngredients.appendChild(ingredient);
+  
+        const measurement = document.createElement('li');
+        measurement.textContent = data.meals[0][`strMeasure${i}`];
+        listOfMeasurements.appendChild(measurement);
+      } else {
+        break;
+      }
+    }
   }
  
   

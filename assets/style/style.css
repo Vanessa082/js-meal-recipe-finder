@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@100..900&family=Lobster&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap");
 
 * {
   list-style-type: none;
@@ -28,40 +28,40 @@ button {
   height: fit-content;
 }
 
-header{
+header {
   padding: 0 0 2rem;
 }
 
 /* nav section  start */
-nav{
+nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
   color: #5e5e5e;
 }
 
-h1{
-  font-family: 'Lobster', sans-serif;
+h1 {
+  font-family: "Lobster", sans-serif;
   font-size: 3rem;
 }
 
-ul{
+ul {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   white-space: nowrap;
   flex-wrap: nowrap;
 
-  li{
-    &:hover{
+  li {
+    &:hover {
       color: #ff642f;
     }
   }
 }
 
-  /* search form style start */
+/* search form style start */
 
-.search{
+.search {
   position: relative;
   height: 50px;
   border-radius: 10px;
@@ -69,25 +69,25 @@ ul{
     color: #c3872c;
     outline: 2px solid #efefef;
   }
-  
-  input{
+
+  input {
     font-size: 1rem;
     color: #5e5e5e;
     background-color: #efefef;
     border: 0;
     padding: 1rem;
-    border-radius: 0 8px  8px 0;
+    border-radius: 0 8px 8px 0;
     outline: 2px solid transparent;
     height: 50px;
     width: 50px;
     transition: width 0.3s ease;
 
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
 
-  .btn{
+  .btn {
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
@@ -95,28 +95,28 @@ ul{
     left: 0;
     height: 50px;
     width: 50px;
-    border-radius:  8px 0 0 8px ;
+    border-radius: 8px 0 0 8px;
     transition: transform 0.3s ease;
 
-    &:focus{
+    &:focus {
       outline: none;
     }
 
-    &:hover{
+    &:hover {
       color: #ff642f;
     }
   }
 }
 
-.search.active .input{
+.search.active .input {
   width: 200px;
 }
 
-.search.active  .btn{
-  transform: translateX(-50px)
+.search.active .btn {
+  transform: translateX(-50px);
 }
 
-.searchResult{
+.searchResult {
   display: flex;
   flex-direction: column;
   width: 40vw;
@@ -140,7 +140,7 @@ ul{
 
 /* begining of the landing section */
 
-.landing{
+.landing {
   display: flex;
   justify-content: space-around;
   gap: 0;
@@ -149,46 +149,46 @@ ul{
   border: 2px solid #e4f1ff;
   border-radius: 16px;
 
-  img{
+  img {
     width: 40%;
     border-radius: 10px 0 0 10px;
   }
 
-  .description{
+  .description {
     width: 100%;
     background-color: #e4f1ff;
     padding: 2rem;
 
-    small{
+    small {
       display: flex;
       align-items: center;
       font-size: 14px;
       gap: 1rem;
 
-      span{
+      span {
         color: #ff642f;
       }
     }
 
-    h4{
-      font-family: 'Playfair Display', serif;
+    h4 {
+      font-family: "Playfair Display", serif;
       font-size: 45px;
       font-weight: 700;
     }
 
-    p{
-      font-family: 'Inter', sans-serif;
+    p {
+      font-family: "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
     }
 
-    .arrow{
+    .arrow {
       background-color: #fff;
       padding: 1rem;
       border-radius: 50%;
       color: #ff642f;
 
-      &:hover{
+      &:hover {
         color: #fff;
         background-color: #ff642f;
       }
@@ -199,7 +199,7 @@ ul{
 /* end of landing style and begining of popularArea style */
 
 .popularArea,
-.favorites{
+.favorites {
   /* background-color: #c3872c; */
   display: flex;
   flex-direction: column;
@@ -208,48 +208,46 @@ ul{
   width: 80vw;
   margin: 0 auto;
 
-  h4{
-    font-family: 'Playfair Display', serif;
+  h4 {
+    font-family: "Playfair Display", serif;
     font-size: 2rem;
     font-weight: 700;
   }
 
-  .mealArea{
+  .mealArea {
     display: flex;
 
-    figure{
+    figure {
       width: 70vw;
       transition: all 0.4s ease-in-out;
 
-      img{
+      img {
         max-width: 100%;
         border-radius: 10px;
-
       }
 
-      .rating i{
+      .rating i {
         color: #ffd700;
       }
-      
-      figcaption{
-        font-family: 'Inter', sans-serif;
+
+      figcaption {
+        font-family: "Inter", sans-serif;
         font-size: 1.5rem;
         font-weight: 400;
       }
-      &:hover{
+      &:hover {
         transform: scale(0.95);
         color: #ff642f;
       }
     }
   }
-
 }
 
-.mealArea{
+.mealArea {
   position: relative;
 }
 
-.favorites .mealArea i{
+.favorites .mealArea i {
   color: #ff0000;
   position: absolute;
   top: 0;
@@ -258,47 +256,47 @@ ul{
 
 /* contact us section */
 
-.contactUs{
+.contactUs {
   background-color: #ffd8ca;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 2rem;
 
-  h1{
-    font-family: 'Playfair Display', serif ;
+  h1 {
+    font-family: "Playfair Display", serif;
     text-align: center;
     font-size: 4rem;
     font-weight: 700;
   }
 
-  p{
-    font-family: 'Playfair Display', serif ;
+  p {
+    font-family: "Playfair Display", serif;
     text-align: center;
     font-size: 2rem;
     font-weight: 400;
   }
 
-  form{
+  form {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     width: 60%;
     margin: 0 auto;
 
-    input{
+    input {
       font-size: 1rem;
       padding: 1rem;
       width: 90%;
       border: 0;
       cursor: pointer;
 
-      &:focus{
+      &:focus {
         outline: none;
       }
     }
 
-    button{
+    button {
       background-color: #ff642f;
       color: #fff;
       font-size: 2rem;
@@ -308,20 +306,20 @@ ul{
     }
   }
 
-  small{
+  small {
     text-align: center;
     padding: 1rem;
 
-    &:hover{
+    &:hover {
       color: #ff642f;
     }
   }
 }
 
-.latestRecipe{
+.latestRecipe {
   background-color: #c3872c;
 
-  .latestRecipeGrid{
+  .latestRecipeGrid {
     display: flex;
     flex-direction: column;
     font-size: 10px;
@@ -330,6 +328,50 @@ ul{
 
 /* carouselContainerstyle */
 
+.carouselContainerslider {
+  display: flex;
+  background: linear-gradient(
+    149deg,
+    rgb(247, 0, 255) 0%,
+    rgb(255, 145, 0) 100%
+  );
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .carouselContainerslides {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+
+    .carouselContainer {
+      display: flex;
+      overflow-x: scroll;
+      position: relative;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+
+      .carouselItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 400px;
+        margin-right: 0px;
+        box-sizing: border-box;
+        background: white;
+        transform-origin: center center;
+        transform: scale(1);
+      }
+    }
+  }
+}
 
 /* main {
   justify-content: space-between;
@@ -465,5 +507,4 @@ ul{
       font-size: 0.9rem; 
     }
   }
-} */ 
-
+} */
