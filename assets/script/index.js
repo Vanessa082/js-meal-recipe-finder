@@ -35,7 +35,9 @@ const displayMeals = async () => {
     meals.forEach(meal => {
       const item = document.createElement('li')
       
-      item.innerHTML = `<a href='#'dataMealId='${meal.idMeal}'>${meal.strMeal}</a>`
+      item.innerHTML = `<a href='#mealDetails' data-MealId='${meal.idMeal}'>${meal.strMeal}</a>`
+
+      item.onclick = () => displayMealDetails(meal.idMeal);
       
       searchResult.appendChild(item)
     })
@@ -46,53 +48,44 @@ const displayMeals = async () => {
   }
 }
 
-input.addEventListener('input', displayMeals)
+input.addEventListener('input', displayMeals);
 
-  searchResult.addEventListener('click', (event)=>{
-    if(event.target.tagName === 'A'){
-     const mealId = event.target.getAttribute('dataMealId')
-     displayMealDetails(mealId)
-    }
-  })
+const displayMealDetails = async (mealId) => {
+  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+  const data = await response.json()
   
-  
-  const displayMealDetails = async (mealId) => {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-    const data = await response.json()
-    
+  console.log('API Response:', data)
+  const mealName = document.querySelector('.strMeal')
+  const mealCategory = document.querySelector('.strCategory')
+  const mealArea = document.querySelector('.strArea')
 
-    console.log('API Response:', data)
-    const mealName = document.querySelector('.strMeal')
-    const mealCategory = document.querySelector('.strCategory')
-    const mealArea = document.querySelector('.strArea')
+  mealName.textContent = data.meals[0].strMeal
+  mealCategory.textContent = data.meals[0].strCategory
+  mealArea.textContent = data.meals[0].strArea
+  displayIngredientsMeasurements(data) 
+}
 
-    mealName.textContent = data.meals[0].strMeal
-    mealCategory.textContent = data.meals[0].strCategory
-    mealArea.textContent = data.meals[0].strArea
-    displayIngredientsMeasurements(data) 
-  }
+const displayIngredientsMeasurements = (data) => {
+  const listOfIngredients = document.querySelector('.listOfIngredients');
+  const listOfMeasurements = document.querySelector('.listOfMeasurements');
 
-  const displayIngredientsMeasurements = (data) => {
-    const listOfIngredients = document.querySelector('.listOfIngredients');
-    const listOfMeasurements = document.querySelector('.listOfMeasurements');
-  
-    listOfIngredients.innerHTML = '';
-    listOfMeasurements.innerHTML = '';
-  
-    for (let i = 1; i <= 20; i++) {
-      if (data.meals[0][`strIngredient${i}`]) {
-        const ingredient = document.createElement('li');
-        ingredient.textContent = data.meals[0][`strIngredient${i}`];
-        listOfIngredients.appendChild(ingredient);
-  
-        const measurement = document.createElement('li');
-        measurement.textContent = data.meals[0][`strMeasure${i}`];
-        listOfMeasurements.appendChild(measurement);
-      } else {
-        break;
-      }
+  listOfIngredients.innerHTML = '';
+  listOfMeasurements.innerHTML = '';
+
+  for (let i = 1; i <= 20; i++) {
+    if (data.meals[0][`strIngredient${i}`]) {
+      const ingredient = document.createElement('li');
+      ingredient.textContent = data.meals[0][`strIngredient${i}`];
+      listOfIngredients.appendChild(ingredient);
+
+      const measurement = document.createElement('li');
+      measurement.textContent = data.meals[0][`strMeasure${i}`];
+      listOfMeasurements.appendChild(measurement);
+    } else {
+      break;
     }
   }
+}
  
   
 
