@@ -4,6 +4,7 @@ const searchResult = document.querySelector('.searchResult')
 const searchBtn = document.querySelector('.btn')
 const mealOrigin = document.querySelector('.mealOrigin')
 const mealName = document.querySelector('.strMeal')
+const MealThumb = document.querySelector('.strMealThumb')
 const categoryCarousel = document.querySelector('.carouselContainer')
 const latestRecipe = document.querySelector('.latestRecipeGrid')
 
@@ -62,7 +63,9 @@ const displayMealDetails = async (mealId) => {
   mealName.textContent = data.meals[0].strMeal
   mealCategory.textContent = data.meals[0].strCategory
   mealArea.textContent = data.meals[0].strArea
+  MealThumb.src = data.meals[0].strMealThumb
   displayIngredientsMeasurements(data) 
+
 }
 
 const displayIngredientsMeasurements = (data) => {
