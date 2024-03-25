@@ -236,40 +236,6 @@ nav ul li a {
 }
 /* End Hero Section */
 
-/* Category */
-
-.mealCategories {
-  display: flex;
-  flex-direction: column;
-
-  .slider {
-    display: flex;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
-    .carouselItem {
-      display: flex;
-      flex-direction: column;
-      flex: 1 0 17%;
-      scroll-snap-align: center;
-      height: 100px;
-      width: 250px;
-      border-radius: 50%;
-      /* background-color: #c3872c; */
-
-      img {
-        width: 100%;
-      }
-      .categoryName {
-        text-align: center;
-        font-size: 10px;
-      }
-    }
-  }
-}
-
-/*  End category */
-
-
 /* About */
 #about .visual img,
 #app .visual img {
@@ -277,65 +243,24 @@ nav ul li a {
 }
 /* End About */
 
-/* Restaurant Menu */
-.category {
-  list-style: none;
-  text-align: center;
-  margin: 20px 0 40px 0;
+/* Meal */
+.mealthumbdiv{
+  width: 50%;
+  background-color: var(--clr-primary);
+  border-radius: 40%;
+
+  .strMealThumb{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-.category li {
-  display: inline-block;
-  margin: 0 15px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
+.ingredients-Measurement{
+  display: flex;
 }
-
-.category li.active {
-  color: var(--clr-primary);
-}
-
-.restaurant-menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.menu-item {
-  width: 260px;
-  margin: 0 auto;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.menu-item img {
-  width: 100%;
-}
-
-.order {
-  justify-content: space-between;
-}
-
-.btn-menu {
-  padding: 6px 10px;
-  font-size: 16px;
-  text-align: center;
-  background: #fff;
-  border: 1px solid var(--clr-primary);
-  color: var(--clr-primary);
-}
-
-.title {
-  font-size: 18px;
-  font-weight: 300;
-  margin: 8px 0;
-}
-
-.location {
-  font-size: 18px;
-  font-weight: 500;
-}
-/* End Restaurant Menu */
+/* End Meal */
 
 /* mealarea and favorite */
 
@@ -526,5 +451,3 @@ top: 0;
 
   
 }
-
-
