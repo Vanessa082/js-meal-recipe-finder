@@ -242,12 +242,15 @@ nav ul li a {
   display: flex;
   flex-direction: column;
 
-  .slide {
+  .slider {
     display: flex;
+    scroll-snap-type: x mandatory;
     gap: 10px;
     .carouselItem {
       display: flex;
       flex-direction: column;
+      flex: 1 0 17%;
+      scroll-snap-align: center;
       height: 100px;
       width: 250px;
       border-radius: 50%;
