@@ -12,11 +12,33 @@
     <nav>
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn">
-        <ion-icon name="grid-outline"></ion-icon>
+        <nav>
+          <input type="checkbox" id="check" />
+          <label for="check" class="checkbtn">
+            <!-- SVG icon -->
+            <svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M3,11H21V13H3M3,16H21V18H3M3,6H21V8H3V6Z" />
+            </svg>
+          </label>
+        
+          <label class="logo">Yummy</label>
+        
+          <ul>
+            <li><a href="#hero-section" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#favorite">Favorite</a></li>
+            <li><a href="#category">Category</a></li>
+            <li><a href="#ContactUs">Contact Us</a></li>
+          </ul>
+        </nav>
+        
+        <svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3,11H21V13H3M3,16H21V18H3M3,6H21V8H3V6Z" />
+        </svg>
       </label>
-
+    
       <label class="logo">Yummy</label>
-
+    
       <ul>
         <li><a href="#hero-section" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -25,17 +47,18 @@
         <li><a href="#ContactUs">Contact Us</a></li>
       </ul>
     </nav>
+    
   </div>
 
       <!-- Hero Section -->
       <div class="section flex" id="hero-section">
         <div class="text">
-          <h1 class=" primary description">
+          <h1 class="description">
             It's Not Just Cooking, <br />
             It's an <span>Experience</span>
           </h1>
   
-          <p class="tertiary">
+          <p class="explore">
             Explore Diverce Recipes for every palate
           </p>
 
@@ -55,7 +78,6 @@
   
         <!-- MealDetails  -->
         <div class="container flex" id="mealDetails">
-          <di class="visual">
             <img src="" alt="" class="strMealThumb" />
           <div class="text">
             <div class="secondary mealOrigin">
@@ -78,24 +100,19 @@
             </div>
           </div>
         </div>
-      </div>
+
       <!-- End mealDetal -->
 
          <!--Categories-->
-         <section class="landing">
-          <span>Do not miss out on our magazines</span>
         <div class="mealCategories">
           <h4>Popular Categories</h4>
+          
           <div class="carouselContainerslider slider">
-            <div class="carouselContainerslides slide-track">
               <div class="carouselContainer slide">
                 <!-- categry -->
               </div>
-            </div>
           </div>
         </div>
-
-      </section>
 
       <!-- end Category -->
 
@@ -224,49 +241,51 @@
       <!-- End Contactus -->
 
     <!-- Footer -->
-    <div class="footer">
-      <div class="container flex">
-        <div class="footer-about">
-          <h2>About</h2>
-          <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.</p>
+      <footer class="footer">
+        <div class="container flex">
+          <div class="footer-about">
+            <h2>About</h2>
+            <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.</p>
+          </div>
+  
+          <div class="footer-category">
+            <h2>Top Category</h2>
+  
+            <ul>
+              <li>Biryani</li>
+              <li>Chicken</li>
+              <li>Pizza</li>
+              <li>Burger</li>
+              <li>Pasta</li>
+            </ul>
+          </div>
+  
+          <div class="quick-links">
+            <h2>Quick Links</h2>
+  
+            <ul>
+              <li>About Us</li>
+              <li>Carrier</li>
+              <li>Feedback</li>
+              <li>Legal</li>
+              <li>Terms and Conditions</li>
+            </ul>
+          </div>
+  
+          <div class="get-in-touch">
+            <h2>Get in touch</h2>
+            <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+          </div>
         </div>
-
-        <div class="footer-category">
-          <h2>Top Category</h2>
-
-          <ul>
-            <li>Biryani</li>
-            <li>Chicken</li>
-            <li>Pizza</li>
-            <li>Burger</li>
-            <li>Pasta</li>
-          </ul>
+  
+        <div class="copyright">
+          <p>Copyright &copy; Wah Vanessa. All Rights Reserved.</p>
         </div>
-
-        <div class="quick-links">
-          <h2>Quick Links</h2>
-
-          <ul>
-            <li>About Us</li>
-            <li>Carrier</li>
-            <li>Feedback</li>
-            <li>Legal</li>
-            <li>Terms and Conditions</li>
-          </ul>
-        </div>
-
-        <div class="get-in-touch">
-          <h2>Get in touch</h2>
-          <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-youtube"></i>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <p>Copyright &copy; Wah Vanessa. All Rights Reserved.</p>
-      </div>
-    </div>
+      </footer>
+    </footer>
 </body>
+<script src="assets/script/index.js"></script>
 </html>

@@ -8,12 +8,6 @@ const MealThumb = document.querySelector('.strMealThumb')
 const categoryCarousel = document.querySelector('.carouselContainer')
 const latestRecipe = document.querySelector('.latestRecipeGrid')
 
-searchBtn.addEventListener('click', () => {
-  searchBar.classList.toggle('active')
-  input.focus()
-})
-
-
 const fetchMealDetail = async (searchInput) => {
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
   
@@ -90,9 +84,8 @@ const displayIngredientsMeasurements = (data) => {
   }
 }
  
-  
 
-// catergory section
+// catergory
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
@@ -137,29 +130,3 @@ const displayCategories = (categories) => {
   }
 
 }
-
-
-
-// const searchParams = new URLSearchParams(window.location.search)
-// const ingredientsMeasurement = document.querySelector('.ingredients-Measurement')
-// const mealImage = document.querySelector('.strMealThumb')
-// const mealName = document.querySelector('.strMeal')
-// const mealCategoryName = document.querySelector('.strCategory')
-// const mealArea = document.querySelector('.strArea')
-// const sourceButton = document.querySelector('.strSource')
-// const youtubeButton = document.querySelector('.strYoutube')
-// const mealInstructions = document.querySelector('.instructions')
- 
-
-
-// const input = document.querySelector('.input')
-// const searchResult = document.querySelector('.searchResult')
-
-
-// const fetchMealDetail = async (searchInput) => {
-//   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
-//   const data = await response.json();
-//   return data.meals;
-// }
-
-// 
