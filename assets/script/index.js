@@ -1,4 +1,4 @@
-const searchBar = document.querySelector('.search')
+ const searchBar = document.querySelector('.search')
 const input = document.querySelector('.input')
 const searchResult = document.querySelector('.searchResult')
 const searchBtn = document.querySelector('.btn')
