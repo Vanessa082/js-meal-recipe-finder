@@ -229,6 +229,25 @@ main {
   }
 }
 
+/* Meal */
+.mealthumbdiv{
+  width: 50%;
+  background-color: var(--clr-primary);
+  border-radius: 40%;
+
+  .strMealThumb{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.ingredients-Measurement{
+  display: flex;
+}
+/* End Meal */
+
 /* favorite and meal area */
 
 .favorites {
